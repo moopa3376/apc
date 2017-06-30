@@ -1,4 +1,4 @@
-package net.moopa.web.apc;
+package net.moopa.apc.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -46,12 +46,14 @@ public class ApcFilter implements Filter {
      * @throws ServletException
      */
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+
         //获得了request的请求路径
         String path = ((HttpServletRequest)servletRequest).getServletPath();
+        String method = ((HttpServletRequest) servletRequest).getMethod();
 
         //是否需要过滤该请求路径
         Boolean need_check = false;
-        if( ((need_check = url_checks.get(path)) != null && need_check )
+        if( ((need_check = url_checks.get(path+"|"+method)) != null && need_check )
                 ||needFilter(path)){
             //接下来把该请求交给apc-core去处理,并且根据处理结果来进行
 
@@ -90,4 +92,5 @@ public class ApcFilter implements Filter {
     public void handlerError(){
 
     }
+
 }
