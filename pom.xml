@@ -2,12 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>net.moopa.web.api-paramter-checker</groupId>
+  <groupId>net.moopa.web.api-parameter-checker</groupId>
   <artifactId>apc-all</artifactId>
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>apc-web</module>
     <module>apc-core</module>
+    <module>apc-demo</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -18,6 +19,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <junit.version>4.12</junit.version>
+
+    <slf4j.version>1.7.21</slf4j.version>
+    <gson.version>2.6.2</gson.version>
+    <spring.version>4.2.5.RELEASE</spring.version>
+    <oss.aliyun.version>2.6.0</oss.aliyun.version>
+    <servlet.version>2.5</servlet.version>
   </properties>
 
   <dependencies>
