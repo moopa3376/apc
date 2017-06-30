@@ -3,7 +3,7 @@
     <parent>
         <artifactId>apc-all</artifactId>
         <groupId>net.moopa.web.api-parameter-checker</groupId>
-        <version>1.0.0</version>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>apc-demo</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>net.moopa.web.api-parameter-checker</groupId>
             <artifactId>apc-web</artifactId>
-            <version>1.0.0</version>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>

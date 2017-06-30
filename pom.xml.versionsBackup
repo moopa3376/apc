@@ -4,7 +4,7 @@
 
   <groupId>net.moopa.web.api-parameter-checker</groupId>
   <artifactId>apc-all</artifactId>
-  <version>1.0.0</version>
+  <version>1.0-SNAPSHOT</version>
   <modules>
     <module>apc-web</module>
     <module>apc-core</module>
