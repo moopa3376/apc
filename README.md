@@ -24,3 +24,8 @@ How to use apc
 * implement the net.moopa.apc.service.IApcService
 * update the file - apc.config
 * add annotation before the method in controller.
+
+
+mind mapping
+--
+![img](http://114.215.83.57:3376/leeimgs/service/fetchimg?imgurl=C21F911B44A5CD23E6C1C09193258E634AA6D)
