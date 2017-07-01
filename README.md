@@ -12,4 +12,15 @@ APC contains 3 moules:
 * apc-web
     * to integrate with JavaEE
 * apc-core
-    * to get api information and do inspection.
+    * to get and cache api information and do inspection.
+* apc-demo
+    * JavaEE demo integrated with apc
+
+
+How to use apc
+---
+4 steps:
+* add filter in web.xml
+* implement the net.moopa.apc.service.IApcService
+* update the file - apc.config
+* add annotation before the method in controller.
