@@ -14,6 +14,7 @@ import net.moopa.apc.core.http.HttpRequestMethod;
 import net.moopa.apc.core.http.HttpRequestParameter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -61,6 +62,9 @@ public class ApiInfoMngt {
 
                 Method[] methods = c.getMethods();
 
+                RequestMapping requestMapping = c.getAnnotation(RequestMapping.class);
+                String ahead_request_path = requestMapping != null ? requestMapping.path()+"/" : "";
+
                 for(Method m : methods){
                     Api api = new Api();
 
@@ -70,7 +74,7 @@ public class ApiInfoMngt {
                     if(path == null){
                         continue;
                     }
-                    String requestPath = path.requestPath();
+                    String requestPath = ahead_request_path + path.requestPath();
                     if(requestPath == null || requestPath.length() == 0){
                         logger.error("Method {} in class {} don't have correct request path.", m.getName(), c.getName());
                         continue;
@@ -114,7 +118,8 @@ public class ApiInfoMngt {
                             if(jsonElement_key == null){
                                 logger.error("Method {} - Path {} params setting error - key is illegal",m.getName(),requestPath);
                                 continue;
-                            }key = jsonElement_key.getAsString();
+                            }
+                            key = jsonElement_key.getAsString();
                             if(key.length() == 0){
                                 logger.error("Method {} - Path {} params setting error - key is illegal",m.getName(),requestPath);
                                 continue;
